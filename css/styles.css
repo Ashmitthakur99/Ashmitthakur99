@@ -1,0 +1,380 @@
+
+/* ------------------------------
+   General page styling
+------------------------------ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    padding: 16px;
+    background-color: #eaf8fc;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+header,
+#content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 155px;
+    padding: 26px 16px 18px;
+}
+
+header hgroup {
+    margin: 12px 0 0;
+}
+
+header h1 {
+    margin: 0 0 12px;
+    color: #111;
+    font-size: 2.2rem;
+    line-height: 1.1;
+}
+
+header hgroup p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* ------------------------------
+   Profile and contact details
+------------------------------ */
+
+header figure {
+    width: 105px;
+    margin: 0;
+    text-align: center;
+}
+
+header figure img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 5px;
+    object-fit: contain;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.contact {
+    margin: 0;
+    text-align: center;
+}
+
+.contact-type {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.contact-value {
+    margin: 0;
+}
+
+.contact-value a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 0.75rem;
+    text-decoration: none;
+}
+
+.contact-email .contact-value a::before {
+    content: "\2709";
+    font-size: 24px;
+}
+
+.contact-github .contact-value a::before {
+    content: "GH";
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 23px;
+    height: 23px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+header figure figcaption {
+    margin-top: 5px;
+    font-size: 0.7rem;
+}
+
+/* ------------------------------
+   Main CV layout
+------------------------------ */
+
+#content {
+    padding: 10px 16px 24px;
+}
+
+#content section {
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr);
+    column-gap: 14px;
+    position: relative;
+    margin: 0 0 24px;
+}
+
+#content section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 78px;
+    width: 3px;
+    background-color: #ddd;
+}
+
+#content section > h3 {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    padding: 2px 6px 0 0;
+    color: #222;
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+/* ------------------------------
+   About section
+------------------------------ */
+
+#about > p {
+    margin-top: 0;
+    color: #666;
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+/* ------------------------------
+   Skill ratings
+------------------------------ */
+
+#skillset .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+#skillset .skill {
+    color: #777;
+    font-size: 0.85rem;
+    line-height: 1.25;
+}
+
+#skillset .skill span::after {
+    padding-left: 4px;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+#skillset .skill[data-skill="9"] span::after {
+    content: "★★★★★";
+}
+
+#skillset .skill[data-skill="7"] span::after {
+    content: "★★★★";
+}
+
+#skillset .skill[data-skill="5"] span::after {
+    content: "★★★";
+}
+
+#skillset .skill[data-skill="3"] span::after {
+    content: "★★";
+}
+
+/* ------------------------------
+   Education and work entries
+------------------------------ */
+
+.cv-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+}
+
+.cv-item {
+    min-width: 0;
+}
+
+.cv-item > hgroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.cv-item-heading {
+    margin: 0;
+    color: #267a73;
+    font-size: 0.9rem;
+    line-height: 1.35;
+}
+
+.cv-item-heading .subject,
+.cv-item-heading .award {
+    color: #3b9a91;
+    font-size: 0.78rem;
+    font-weight: normal;
+}
+
+.cv-item-date {
+    flex-shrink: 0;
+    margin: 0;
+    color: #999;
+    font-size: 0.75rem;
+    text-align: right;
+}
+
+.cv-item h5 {
+    margin: 14px 0 8px;
+    color: #555;
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+
+/* ------------------------------
+   Education subject bars
+------------------------------ */
+
+#education .skills {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 4px;
+}
+
+#education .skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 22px;
+    padding: 3px 5px;
+    color: #fff;
+    text-align: center;
+    font-size: 0.72rem;
+    overflow-wrap: anywhere;
+}
+
+#education .university {
+    background-color: #526b36;
+}
+
+#education .alevel {
+    background-color: #8500a5;
+}
+
+#education .gcse {
+    background-color: #006b68;
+}
+
+/* ------------------------------
+   Work descriptions
+------------------------------ */
+
+.cv-item-description {
+    margin: 10px 0 0;
+    color: #777;
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+/* ------------------------------
+   Other interests
+------------------------------ */
+
+#interests .cv-item-list {
+    gap: 12px;
+}
+
+#interests .cv-item-heading {
+    font-size: 0.85rem;
+}
+
+#content section > p,
+#content section > .skills,
+#content section > .cv-item-list {
+    grid-column: 2;
+    min-width: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+
+/* ------------------------------
+   Responsive layout
+------------------------------ */
+
+@media (width <= 600px) {
+    body {
+        padding: 8px;
+    }
+
+    header {
+        min-height: 125px;
+        padding: 20px 12px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    #content {
+        padding: 12px;
+    }
+
+    #content section {
+        grid-template-columns: 70px minmax(0, 1fr);
+        column-gap: 10px;
+        margin-bottom: 22px;
+    }
+
+    #content section::before {
+        left: 70px;
+    }
+
+    #education .skills {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cv-item > hgroup {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .cv-item-date {
+        text-align: left;
+    }
+}
