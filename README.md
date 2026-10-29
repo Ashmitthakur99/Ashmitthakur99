@@ -8,7 +8,7 @@ I'm a student at Leeds Beckett University, learning web development.
 - JavaScript
 
 ## Projects
-- **My CV**: a web page built with HTML and CSS
+- **My CV**:https://ashmitthakur99.github.io/Ashmitthakur99/ a web page built with HTML and CSS
 
 ## Contact
 - Email: your-email-here
